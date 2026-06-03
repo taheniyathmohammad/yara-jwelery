@@ -1,0 +1,124 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --crimson: #8B3A3A;
+  --crimson-light: #A85252;
+  --crimson-dark: #6B2D2D;
+  --charcoal: #2C1810;
+  --charcoal-mid: #3D2817;
+  --text-muted: #5C4033;
+  --parchment: #fdf8f0;
+}
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 0 0% 3.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 3.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 3.9%;
+    --primary: 0 0% 9%;
+    --primary-foreground: 0 0% 98%;
+    --secondary: 0 0% 96.1%;
+    --secondary-foreground: 0 0% 9%;
+    --muted: 0 0% 96.1%;
+    --muted-foreground: 0 0% 45.1%;
+    --accent: 0 0% 96.1%;
+    --accent-foreground: 0 0% 9%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 89.8%;
+    --input: 0 0% 89.8%;
+    --ring: 0 0% 3.9%;
+    --radius: 0.5rem;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply text-stone-800;
+    background: linear-gradient(
+      160deg,
+      #fffef5 0%,
+      #fff9f0 25%,
+      #fef9fb 55%,
+      #faf6ff 100%
+    );
+    min-height: 100vh;
+    color: #2C1810;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer utilities {
+  .font-playfair {
+    font-family: var(--font-playfair), Georgia, serif;
+  }
+
+  .font-inter {
+    font-family: var(--font-inter), system-ui, sans-serif;
+  }
+
+  .font-great-vibes {
+    font-family: var(--font-great-vibes), cursive;
+  }
+
+  .text-crimson {
+    color: #8B3A3A;
+  }
+
+  .bg-crimson {
+    background-color: #8B3A3A;
+  }
+
+  .border-crimson {
+    border-color: #8B3A3A;
+  }
+
+  .gradient-bg {
+    background: linear-gradient(
+      160deg,
+      #fffef5 0%,
+      #fff9f0 25%,
+      #fef9fb 55%,
+      #faf6ff 100%
+    );
+  }
+
+  .section-reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+
+  .section-reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #8B3A3A40;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #8B3A3A80;
+}
