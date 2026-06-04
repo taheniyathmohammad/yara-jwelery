@@ -9,7 +9,7 @@ const navLinks = [
   { label: 'Book Dallas Welding', href: '#book' },
   { label: 'Chain Catalog', href: '#chains' },
   { label: 'Private Events', href: '#events' },
-  { label: 'Our Story', href: '#story' },
+  { label: 'Our Story', href: '#our-story' },
 ];
 
 export default function Navbar() {
@@ -56,11 +56,14 @@ export default function Navbar() {
               />
             </div>
             <div className="hidden sm:flex flex-col">
-              <span className="font-playfair text-lg font-bold text-[#8B3A3A] tracking-wide group-hover:opacity-80 transition-opacity">
+              <h1
+                className="font-great-vibes text-5xl text-[#8B3A3A] leading-none"
+                style={{ letterSpacing: '-1px' }}
+              >
                 Yara
-              </span>
-              <span className="font-inter text-[9px] text-[#2C1810] tracking-[0.18em] uppercase leading-none">
-                Little Wings
+              </h1>
+              <span className="font-inter text-[9px] text-[#2C1810] tracking-[0.18em] uppercase leading-none mt-1">
+                Little Wings of Joy
               </span>
             </div>
           </button>

@@ -59,10 +59,13 @@ export default function Footer() {
             transition={{ duration: 0.6 }}
           >
             <div className="mb-4">
-              <span className="font-playfair text-2xl font-bold text-[#8B3A3A]">
-                Yara
-              </span>
-              <p className="font-inter text-xs tracking-[0.2em] text-stone-400 uppercase mt-0.5">
+            <h3
+              className="font-great-vibes text-5xl text-[#8B3A3A] leading-none"
+              style={{ letterSpacing: '-1px' }}
+            >
+              Yara
+            </h3>
+              <p className="font-inter text-xs tracking-[0.2em] text-stone-400 uppercase mt-2">
                 Little Wings of Joy
               </p>
             </div>

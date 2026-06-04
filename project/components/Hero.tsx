@@ -9,16 +9,15 @@ function AnimatedButterfly() {
   const controls = useAnimation();
 
   const floatPath = [
-    { x: 80, y: -30, rotate: -12 },
-    { x: 100, y: -50, rotate: 8 },
-    { x: 60, y: -70, rotate: -20 },
-    { x: 20, y: -60, rotate: 15 },
-    { x: -20, y: -40, rotate: -8 },
-    { x: -40, y: -10, rotate: 12 },
-    { x: -30, y: 20, rotate: -15 },
-    { x: 10, y: 30, rotate: 10 },
-    { x: 50, y: 20, rotate: -10 },
-    { x: 80, y: -30, rotate: -12 },
+    { x: 0, y: 0, rotate: 0 },
+    { x: 40, y: -25, rotate: 12 },
+    { x: 85, y: -60, rotate: -8 },
+    { x: 120, y: -40, rotate: 15 },
+    { x: 90, y: 10, rotate: -10 },
+    { x: 45, y: 35, rotate: 8 },
+    { x: 0, y: 15, rotate: -5 },
+    { x: -30, y: -20, rotate: 10 },
+    { x: 20, y: -50, rotate: -8 },
   ];
 
   useEffect(() => {
@@ -45,78 +44,26 @@ function AnimatedButterfly() {
       viewport={{ once: true }}
       transition={{ duration: 0.8, delay: 0.5, type: 'spring', stiffness: 100 }}
     >
-      <svg
-        width="120"
-        height="100"
-        viewBox="0 0 120 100"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-        className="filter drop-shadow-lg"
-      >
-        {/* Left upper wing */}
-        <path
-          d="M60 50 Q35 25 25 15 Q15 5 10 15 Q5 25 15 40 Q35 50 55 55 Z"
-          fill="#8B3A3A"
-          fillOpacity="0.15"
-          stroke="#8B3A3A"
-          strokeWidth="2.5"
-          strokeLinecap="round"
-          strokeLinejoin="round"
+      <motion.div
+        animate={{
+          scaleX: [1, 0.82, 1],
+        }}
+        transition={{
+          duration: 0.35,
+          repeat: Infinity,
+          ease: "easeInOut",
+        }}
+>
+        <Image
+          src="/butterfly.svg"
+          alt="Butterfly"
+          width={110}
+          height={110}
+          priority
+          className="drop-shadow-lg"
         />
-        {/* Right upper wing */}
-        <path
-          d="M60 50 Q85 25 95 15 Q105 5 110 15 Q115 25 105 40 Q85 50 65 55 Z"
-          fill="#8B3A3A"
-          fillOpacity="0.15"
-          stroke="#8B3A3A"
-          strokeWidth="2.5"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        />
-        {/* Left lower wing */}
-        <path
-          d="M60 50 Q40 65 32 80 Q28 88 35 92 Q42 88 48 75 Q55 62 60 50 Z"
-          fill="#8B3A3A"
-          fillOpacity="0.1"
-          stroke="#8B3A3A"
-          strokeWidth="2"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        />
-        {/* Right lower wing */}
-        <path
-          d="M60 50 Q80 65 88 80 Q92 88 85 92 Q78 88 72 75 Q65 62 60 50 Z"
-          fill="#8B3A3A"
-          fillOpacity="0.1"
-          stroke="#8B3A3A"
-          strokeWidth="2"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        />
-        {/* Body */}
-        <circle cx="60" cy="50" r="5" fill="#8B3A3A" />
-        {/* Head */}
-        <circle cx="60" cy="42" r="4" fill="#8B3A3A" />
-        {/* Left antennae */}
-        <path
-          d="M58 40 Q52 30 48 20"
-          stroke="#8B3A3A"
-          strokeWidth="1.5"
-          strokeLinecap="round"
-          fill="none"
-        />
-        {/* Right antennae */}
-        <path
-          d="M62 40 Q68 30 72 20"
-          stroke="#8B3A3A"
-          strokeWidth="1.5"
-          strokeLinecap="round"
-          fill="none"
-        />
-        {/* Antennae tips */}
-        <circle cx="48" cy="19" r="2.5" fill="#8B3A3A" fillOpacity="0.7" />
-        <circle cx="72" cy="19" r="2.5" fill="#8B3A3A" fillOpacity="0.7" />
-      </svg>
+      </motion.div>
+      
     </motion.div>
   );
 }

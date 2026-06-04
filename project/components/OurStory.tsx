@@ -9,7 +9,10 @@ export default function OurStory() {
   const isInView = useInView(ref, { once: true, margin: '-60px' });
 
   return (
-    <section className="py-24 px-6 relative overflow-hidden">
+    <section
+      id="our-story"
+      className="py-24 px-6 relative overflow-hidden"
+    >
       {/* Decorative background */}
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-rose-50/30 to-transparent pointer-events-none" />
 
@@ -32,46 +35,18 @@ export default function OurStory() {
               {/* Front card */}
               <div className="absolute inset-0 rounded-3xl bg-white/70 backdrop-blur-sm border border-rose-100/60 shadow-lg flex flex-col items-center justify-center gap-4 p-8">
                 {/* Butterfly centerpiece */}
-                <svg
-                  width="100"
-                  height="82"
-                  viewBox="0 0 88 72"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
+                <img
+                  src="/butterfly.svg"
+                  alt="Butterfly"
+                  width="120"
+                  height="120"
+                />
+                <h3
+                  className="font-great-vibes text-5xl text-[#8B3A3A] text-center leading-none"
+                  style={{ letterSpacing: '-1px' }}
                 >
-                  <path
-                    d="M44 36 C44 36 40 28 32 22 C24 16 12 14 8 20 C4 26 8 36 16 40 C24 44 36 42 44 36
-                       C44 36 48 28 56 22 C64 16 76 14 80 20 C84 26 80 36 72 40 C64 44 52 42 44 36
-                       M44 36 C44 36 42 42 40 50 C38 58 40 66 44 68 C48 66 50 58 48 50 C46 42 44 36 44 36"
-                    stroke="#8B3A3A"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    fill="none"
-                  />
-                  <path
-                    d="M44 36 C44 36 40 28 32 22 C24 16 12 14 8 20 C4 26 8 36 16 40 C24 44 36 42 44 36Z"
-                    fill="#8B3A3A"
-                    fillOpacity="0.08"
-                  />
-                  <path
-                    d="M44 36 C44 36 48 28 56 22 C64 16 76 14 80 20 C84 26 80 36 72 40 C64 44 52 42 44 36Z"
-                    fill="#8B3A3A"
-                    fillOpacity="0.08"
-                  />
-                  <path
-                    d="M40 30 C38 24 34 18 30 14 M48 30 C50 24 54 18 58 14"
-                    stroke="#8B3A3A"
-                    strokeWidth="1.3"
-                    strokeLinecap="round"
-                    fill="none"
-                  />
-                  <circle cx="30" cy="13" r="2.5" fill="#8B3A3A" fillOpacity="0.5" />
-                  <circle cx="58" cy="13" r="2.5" fill="#8B3A3A" fillOpacity="0.5" />
-                </svg>
-                <p className="font-playfair text-2xl font-bold text-[#8B3A3A] text-center">
                   Yara
-                </p>
+                </h3>
                 <p className="font-inter text-xs text-stone-400 tracking-widest uppercase text-center">
                   Little Wings of Joy
                 </p>
