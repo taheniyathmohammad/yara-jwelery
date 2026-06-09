@@ -6,64 +6,39 @@ import { MapPin, Sparkles } from 'lucide-react';
 import Image from 'next/image';
 
 function AnimatedButterfly() {
-  const controls = useAnimation();
-
-  const floatPath = [
-    { x: 0, y: 0, rotate: 0 },
-    { x: 40, y: -25, rotate: 12 },
-    { x: 85, y: -60, rotate: -8 },
-    { x: 120, y: -40, rotate: 15 },
-    { x: 90, y: 10, rotate: -10 },
-    { x: 45, y: 35, rotate: 8 },
-    { x: 0, y: 15, rotate: -5 },
-    { x: -30, y: -20, rotate: 10 },
-    { x: 20, y: -50, rotate: -8 },
-  ];
-
-  useEffect(() => {
-    const animate = async () => {
-      for (const point of floatPath) {
-        await controls.start({
-          x: point.x,
-          y: point.y,
-          rotate: point.rotate,
-          transition: { duration: 2.8, ease: 'easeInOut' },
-        });
-      }
-      animate();
-    };
-    animate();
-  }, [controls]);
-
   return (
     <motion.div
-      animate={controls}
-      className="absolute top-24 right-20 md:top-32 md:right-32 z-20 pointer-events-none select-none"
-      initial={{ opacity: 0, scale: 0.3 }}
-      whileInView={{ opacity: 1, scale: 1 }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.8, delay: 0.5, type: 'spring', stiffness: 100 }}
+      className="absolute -top-6 -left-6 md:-top-8 md:-left-8 z-20 pointer-events-none"
+      animate={{
+        x: [0, 4, -3, 5, 0],
+        y: [0, -3, 2, -2, 0],
+        rotate: [-6, 4, -3, 5, -6],
+      }}
+      transition={{
+        duration: 5,
+        repeat: Infinity,
+        ease: "easeInOut",
+      }}
     >
       <motion.div
         animate={{
-          scaleX: [1, 0.82, 1],
+          scaleX: [1, 0.85, 1],
         }}
         transition={{
-          duration: 0.35,
+          duration: 0.18,
           repeat: Infinity,
           ease: "easeInOut",
         }}
->
+      >
         <Image
           src="/butterfly.svg"
           alt="Butterfly"
-          width={110}
-          height={110}
+          width={55}
+          height={55}
+          className="drop-shadow-md"
           priority
-          className="drop-shadow-lg"
         />
       </motion.div>
-      
     </motion.div>
   );
 }
@@ -80,9 +55,6 @@ export default function Hero() {
       <div className="absolute top-1/3 left-[3%] w-96 h-96 rounded-full bg-yellow-50/80 blur-3xl pointer-events-none" />
       <div className="absolute bottom-1/3 right-[3%] w-96 h-96 rounded-full bg-rose-50/70 blur-3xl pointer-events-none" />
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full bg-pink-50/50 blur-3xl pointer-events-none" />
-
-      {/* Animated Butterfly */}
-      <AnimatedButterfly />
 
       {/* Hero Content */}
       <div className="relative z-10 max-w-4xl mx-auto text-center flex flex-col items-center">
@@ -105,29 +77,23 @@ export default function Hero() {
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1, delay: 0.4, type: 'spring', stiffness: 80 }}
-          className="relative mb-6"
+          className="relative"
         >
-          {/* Logo Image */}
-          <div className="relative w-64 h-48 md:w-96 md:h-72 mb-4">
-            <Image
-              src="/logo.jpeg"
-              alt="Yara Logo"
-              fill
-              className="object-contain drop-shadow-lg"
-              priority
-            />
-          </div>
 
           {/* Cursive Text Below Logo */}
-          <motion.h1
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.8 }}
-            className="font-great-vibes text-6xl md:text-7xl text-[#8B3A3A] leading-none mb-1"
-            style={{ letterSpacing: '-2px' }}
-          >
-            Yara
-          </motion.h1>
+          <div className="relative inline-block">
+            <AnimatedButterfly />
+
+            <motion.h1
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.8 }}
+              className="font-great-vibes text-6xl md:text-7xl text-[#8B3A3A] leading-none mb-1"
+              style={{ letterSpacing: '-2px' }}
+            >
+              Yara
+            </motion.h1>
+          </div>
 
           {/* Subtitle */}
           <motion.p
