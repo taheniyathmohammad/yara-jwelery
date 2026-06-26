@@ -97,17 +97,6 @@ export default function OurStory() {
                 like it was made just for you — because it was.
               </p>
             </div>
-            <motion.a
-              href="https://visibook.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              whileHover={{ x: 4 }}
-              transition={{ type: 'spring', stiffness: 400 }}
-              className="inline-flex items-center gap-2 mt-8 font-inter text-sm text-[#8B3A3A] font-medium tracking-wide border-b border-[#8B3A3A]/40 pb-0.5 hover:border-[#8B3A3A] transition-colors"
-            >
-              Begin your story in Dallas
-              <span className="text-lg leading-none">&rarr;</span>
-            </motion.a>
           </motion.div>
         </div>
       </div>

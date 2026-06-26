@@ -127,14 +127,6 @@ export default function ExperienceFlow() {
           transition={{ duration: 0.6, delay: 0.3 }}
           className="text-center mt-14"
         >
-          <a
-            href="https://visibook.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 font-inter text-sm text-[#8B3A3A] font-medium tracking-wide border-b border-[#8B3A3A]/40 pb-0.5 hover:border-[#8B3A3A] transition-colors duration-300"
-          >
-            Ready to begin your story? Book your session
-          </a>
         </motion.div>
       </div>
     </section>

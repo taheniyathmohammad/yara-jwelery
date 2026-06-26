@@ -44,7 +44,7 @@ function AnimatedButterfly() {
 }
 
 export default function Hero() {
-  const bookingUrl = 'https://visibook.com';
+  const bookingUrl = 'https://cal.com/yarajewelry/booking';
 
   return (
     <section
@@ -126,8 +126,7 @@ export default function Hero() {
           transition={{ duration: 0.8, delay: 1.35 }}
           className="font-inter text-base md:text-lg text-[#2C1810]/60 max-w-md mx-auto leading-relaxed mb-12"
         >
-          Clasp-free, beautifully welded fine chains worn forever — a tiny
-          symbol of something that matters to you, bonded to your wrist.
+          Clasp-free, beautifully welded fine chains worn forever.
         </motion.p>
 
         {/* CTA Buttons */}
